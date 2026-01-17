@@ -2,7 +2,7 @@
 import { defineConfig } from 'vite';
 import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react';
-import path from 'node:path'
+import * as path from 'path'; 
 import url from 'node:url'
 const _dirname = path.dirname(url.fileURLToPath(import.meta.url))
 // https://vitejs.dev/config/
@@ -17,9 +17,8 @@ export default defineConfig({
     // ...,
   ],
   resolve: {
-    alias : {
-      "@": "./src",
-      "@shared/": path.resolve(__dirname, "./shared"),
-    }
+    alias : [
+      { find: '@', replacement: path.resolve(__dirname, 'src') },
+    ]
   }
 });

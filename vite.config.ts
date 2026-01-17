@@ -1,9 +1,10 @@
 // vite.config.ts
+import { defineConfig } from 'vite';
 import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react';
-import { resolve } from 'path';
-import { defineConfig } from 'vite';
-import path from 'path';
+import path from 'node:path'
+import url from 'node:url'
+const _dirname = path.dirname(url.fileURLToPath(import.meta.url))
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -17,8 +18,7 @@ export default defineConfig({
   ],
   resolve: {
     alias : {
-       "@": path.resolve(__dirname, "./"),
-      "@tests": path.resolve(__dirname, "./tests")
+      "@/": resolve(_dirname, "./shared"),
     }
   }
 });

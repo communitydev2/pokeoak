@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { AuthenticationTitle } from './authenticationTitle'
-import {SignUp} from './SignUp'
+import {SignUp} from './signUp'
 
 
 

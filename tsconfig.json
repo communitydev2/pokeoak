@@ -16,9 +16,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@test-utils": ["./test-utils"]
     }
   },
   "include": ["src", "test-utils", ".storybook/main.ts", ".storybook/preview.tsx"]

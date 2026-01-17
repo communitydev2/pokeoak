@@ -1,10 +1,10 @@
-import { AuthenticationTitle } from '@/components/login/AuthenticationTitle.js';
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle.js';
+import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
+import { Welcome } from '../components/Welcome/Welcome';
 
 export function HomePage() {
   return (
     <>
-      <AuthenticationTitle />
+      <Welcome />
       <ColorSchemeToggle />
     </>
   );

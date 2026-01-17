@@ -10,19 +10,16 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    // "allowImportingTsExtensions": true,
-    "module": "node16",
-    "moduleResolution": "node16",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
+      "@/*": ["./src/*"],
+      "@test-utils": ["./test-utils"]
     }
   },
-  "include": ["src", ".storybook/main.ts", ".storybook/preview.tsx","src/**/*.ts", "tests/**/*.ts","react"],
-  "exclude": ["node_modules", ".vscode"]
-
+  "include": ["src", "test-utils", ".storybook/main.ts", ".storybook/preview.tsx"]
 }

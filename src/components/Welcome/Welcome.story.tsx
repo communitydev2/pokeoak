@@ -1,4 +1,4 @@
-import { Welcome } from './Welcome.js';
+import { Welcome } from './Welcome';
 
 export default {
   title: 'Welcome',

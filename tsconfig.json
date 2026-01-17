@@ -21,6 +21,7 @@
       "@/*": ["./src/*"],
     }
   },
-   "include": ["src/**/*.ts", "tests/**/*.ts"],
+  "include": ["src", ".storybook/main.ts", ".storybook/preview.tsx","src/**/*.ts", "tests/**/*.ts"],
   "exclude": ["node_modules", ".vscode"]
+
 }

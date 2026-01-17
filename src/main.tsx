@@ -4,10 +4,10 @@ import { RouterProvider, createRouter } from '@tanstack/react-router'
 import '@mantine/core/styles.css';
 
 import { MantineProvider } from '@mantine/core';
-import { theme } from './theme';
+import { theme } from './theme.js';
 
 // Import the generated route tree
-import { routeTree } from './routeTree.gen'
+import { routeTree } from './routeTree.gen.js'
 
 // Create a new router instance
 const router = createRouter({ routeTree })

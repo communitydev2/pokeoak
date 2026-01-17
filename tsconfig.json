@@ -10,8 +10,9 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "node",
+    // "allowImportingTsExtensions": true,
+    "module": "node16",
+    "moduleResolution": "node16",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
@@ -21,7 +22,7 @@
       "@/*": ["src/*"],
     }
   },
-  "include": ["src", ".storybook/main.ts", ".storybook/preview.tsx","src/**/*.ts", "tests/**/*.ts"],
+  "include": ["src", ".storybook/main.ts", ".storybook/preview.tsx","src/**/*.ts", "tests/**/*.ts","react"],
   "exclude": ["node_modules", ".vscode"]
 
 }

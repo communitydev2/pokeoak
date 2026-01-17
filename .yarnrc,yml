@@ -1,3 +1,8 @@
+nodeLinker: node-modules
+
+yarnPath: .yarn/releases/vite.config.ts
+
+
 packageExtensions:
   "@tanstack/react-router-devtools@^1.114.21":
     dependencies:

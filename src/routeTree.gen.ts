@@ -10,18 +10,25 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SignUpRouteImport } from './routes/signUp'
-import { Route as AuthenticationTitleRouteImport } from './routes/authenticationTitle'
+import { Route as LandingpageRouteImport } from './routes/landingpage'
+import { Route as AuthenticationtitleRouteImport } from './routes/authenticationtitle'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PokemonCardPokemonCardRouteImport } from './routes/pokemonCard/PokemonCard'
 
 const SignUpRoute = SignUpRouteImport.update({
   id: '/signUp',
   path: '/signUp',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticationTitleRoute = AuthenticationTitleRouteImport.update({
-  id: '/authenticationTitle',
-  path: '/authenticationTitle',
+const LandingpageRoute = LandingpageRouteImport.update({
+  id: '/landingpage',
+  path: '/landingpage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticationtitleRoute = AuthenticationtitleRouteImport.update({
+  id: '/authenticationtitle',
+  path: '/authenticationtitle',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -34,39 +41,71 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PokemonCardPokemonCardRoute = PokemonCardPokemonCardRouteImport.update({
+  id: '/pokemonCard/PokemonCard',
+  path: '/pokemonCard/PokemonCard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/authenticationTitle': typeof AuthenticationTitleRoute
+  '/authenticationtitle': typeof AuthenticationtitleRoute
+  '/landingpage': typeof LandingpageRoute
   '/signUp': typeof SignUpRoute
+  '/pokemonCard/PokemonCard': typeof PokemonCardPokemonCardRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/authenticationTitle': typeof AuthenticationTitleRoute
+  '/authenticationtitle': typeof AuthenticationtitleRoute
+  '/landingpage': typeof LandingpageRoute
   '/signUp': typeof SignUpRoute
+  '/pokemonCard/PokemonCard': typeof PokemonCardPokemonCardRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/authenticationTitle': typeof AuthenticationTitleRoute
+  '/authenticationtitle': typeof AuthenticationtitleRoute
+  '/landingpage': typeof LandingpageRoute
   '/signUp': typeof SignUpRoute
+  '/pokemonCard/PokemonCard': typeof PokemonCardPokemonCardRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/authenticationTitle' | '/signUp'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/authenticationtitle'
+    | '/landingpage'
+    | '/signUp'
+    | '/pokemonCard/PokemonCard'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/authenticationTitle' | '/signUp'
-  id: '__root__' | '/' | '/about' | '/authenticationTitle' | '/signUp'
+  to:
+    | '/'
+    | '/about'
+    | '/authenticationtitle'
+    | '/landingpage'
+    | '/signUp'
+    | '/pokemonCard/PokemonCard'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/authenticationtitle'
+    | '/landingpage'
+    | '/signUp'
+    | '/pokemonCard/PokemonCard'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  AuthenticationTitleRoute: typeof AuthenticationTitleRoute
+  AuthenticationtitleRoute: typeof AuthenticationtitleRoute
+  LandingpageRoute: typeof LandingpageRoute
   SignUpRoute: typeof SignUpRoute
+  PokemonCardPokemonCardRoute: typeof PokemonCardPokemonCardRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -78,11 +117,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignUpRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/authenticationTitle': {
-      id: '/authenticationTitle'
-      path: '/authenticationTitle'
-      fullPath: '/authenticationTitle'
-      preLoaderRoute: typeof AuthenticationTitleRouteImport
+    '/landingpage': {
+      id: '/landingpage'
+      path: '/landingpage'
+      fullPath: '/landingpage'
+      preLoaderRoute: typeof LandingpageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/authenticationtitle': {
+      id: '/authenticationtitle'
+      path: '/authenticationtitle'
+      fullPath: '/authenticationtitle'
+      preLoaderRoute: typeof AuthenticationtitleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -99,14 +145,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pokemonCard/PokemonCard': {
+      id: '/pokemonCard/PokemonCard'
+      path: '/pokemonCard/PokemonCard'
+      fullPath: '/pokemonCard/PokemonCard'
+      preLoaderRoute: typeof PokemonCardPokemonCardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  AuthenticationTitleRoute: AuthenticationTitleRoute,
+  AuthenticationtitleRoute: AuthenticationtitleRoute,
+  LandingpageRoute: LandingpageRoute,
   SignUpRoute: SignUpRoute,
+  PokemonCardPokemonCardRoute: PokemonCardPokemonCardRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

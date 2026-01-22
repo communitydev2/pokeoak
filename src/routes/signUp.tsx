@@ -48,17 +48,20 @@ export function SignUp() {
       
       
       // })
-      try{
+      // try{
 
         const { data, error } = await supabase.auth.signUp({
           email: email,
           password: password,
+          options:{
+            emailRedirectTo:"http://localhost:8888/landingpage"
+          }
          
         })
         
-      } catch (error){
-        alert(error)
-      }
+      // } catch (error){
+      //   alert(error)
+      // }
 }
 
 
